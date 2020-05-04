@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>{{titulo}}</h1>
+      <h4>Nombre</h4>
+      <!--Propiedad v-model permite que se le asigne a una propiedad el dato que quiero y lo envie al lenguaje-->
+      <input type="text" v-model="nombre" />
+      <h4>Edad</h4>
+      <input type="text" v-model="edad" />
+      <h4>Beca</h4>
+      <!--Propiedad v-on:keyup por medio de la tecla que quiero que se ejecute una accion-->
+      <!--Propiedad v-on:keyup existe left, right y middle para alguno en especifico del click-->
+      <input
+        type="checkbox"
+        id="checkbox"
+        v-model="beca"
+        @keyup.enter="agregarDato"
+      />
+      <label for="checkbox" v-if="beca===true">Beca</label>
+      <label for="checkbox" v-else>Sin Beca</label>
+      <hr />
+      <!--Propiedad v:on-click o @click llame a la funcion que quiero-->
+      <button id="btnAgregar" v-on:click="agregarDato">Agregar</button>
+
+      <ul>
+        <!--Propiedad v-for='nombre of array' de vue para for-->
+
+        <li v-for="user of usuarios">
+          <span>Nombre:{{user.nombre}}</span>
+          <span>|| Edad: </span>
+          <!--user.edad se le puede transformar a numero con .number-->
+          <input type="text" v-model="user.edad" size="1" />
+          <span v-if="user.estado===true">|| Con beca</span>
+          <label v-else>|| Sin Beca</label>
+          <span v-if="user.edad>=18">|| Mayor</span>
+          <label v-else>|| Menor</label>
+          <button @click="user.edad--">-</button>
+          <button @click="user.edad++">+</button>
+        </li>
+        <h4>Promedio: {{promedioDatos}}</h4>
+      </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/03.js"></script>
+  </body>
+</html>

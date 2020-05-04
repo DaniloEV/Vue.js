@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!--El contenido que quiero usar en vue.js debe estar marcado en divs o sections-->
+    <div id="app">
+      <!--Para que llegue de vue a html se utiliza interpoblacion, se utiliza el nombre de la propiedad que se requiere-->
+      <h1>{{titulo}}</h1>
+      <ul>
+        <!--Propiedad v-for='nombre of array' de vue para for-->
+        <h2><li v-for="gen of generos">{{gen}}</li></h2>
+      </ul>
+
+      <ul>
+        <!--Propiedad v-for='nombre of array' de vue para for-->
+        <h2>
+          <li v-for="user of usuarios">
+            Nombre: {{user.nombre + " || Edad:" +user.edad}}
+            <span v-if="user.estado===true">|| Con beca</span>
+          </li>
+        </h2>
+      </ul>
+    </div>
+    <!-- Scripts-->
+    <div>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="js/index.js"></script>
+    </div>
+  </body>
 </html>
