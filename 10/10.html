@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CDN Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://unpkg.com/vuex@3.3.0/dist/vuex.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="componentes/titulo.js"></script>
+    <script src="componentes/hijo.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container" class="container mt-5">
+      <h1>Vuex</h1>
+      <h4>Libreria externa de vue, creada por vue</h4>
+      <h4>
+        Permite hacer datos globales y utilizarlos en otros lados y otras cosas
+        más
+      </h4>
+      <titulo></titulo>
+    </div>
+
+    <script>
+      const store = new Vuex.Store({
+        //1 Iniciar un estado, se colocan los datos
+        //El estado,la fuente de la verdad que impulsa nuestra aplicación;
+        state: {
+          count: 0,
+        },
+        mutations: {
+          aumentar() {
+            this.state.count++;
+          },
+          //Con parametro
+          aumentar2(state) {
+            state.count++;
+          },
+        },
+      });
+
+      const app = new Vue({
+        el: "#container",
+        //JS entiende que si lo escribo una vez significa que se llaman igual
+        //Seria como hacer store:store
+        store,
+      });
+    </script>
+  </body>
+</html>
