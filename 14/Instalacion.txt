@@ -1,0 +1,9 @@
+Pasos Crear Proyecto CLI
+
+1-Comprobar la carpeta donde se va a tener el proyecto actual
+
+2-Ejecutar comandos 
+	vue create [nombre]  Crea la carpeta del proyecto
+Tirará que si se quiere hacer manual o automaatica la creación
+
+	
