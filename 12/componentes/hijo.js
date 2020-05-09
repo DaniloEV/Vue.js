@@ -19,8 +19,16 @@ Vue.component("hijo", {
   template: `
    <div class="py-5 bg-success">
    <!-- No olvidar el $ y para llamar mutaciones se utiliza el commit para ejecutar -->
-    <button class="btn btn-danger" @click="$store.commit('aumentar2($state)')">+</button>
-     <h3>Numero {{$store.state.count}}</h3>
-      <h3>Numero {{$store.state.count2}}</h3>
+    <button class="btn btn-danger" @click="aumentar">+</button>
+     <button class="btn btn-danger" @click="disminuir(2)">-</button>
+     <h3>Numero {{count}}</h3>
+      <h3>Numero {{count2}}</h3>
    </div>`,
+  //Mismo computed del padre, es para no estar llamando de manera larga
+  computed: {
+    ...Vuex.mapState(["count", "count2"]),
+  },
+  methods: {
+    ...Vuex.mapMutations(["aumentar", "disminuir"]),
+  },
 });

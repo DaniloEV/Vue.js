@@ -46,14 +46,15 @@
         state: {
           count: 45,
           count2: 45,
+          cursos: [],
         },
         mutations: {
           aumentar() {
             this.state.count++;
           },
           //Con parametro
-          aumentar2(state) {
-            state.count++;
+          disminuir(state, n) {
+            state.count2 -= n;
           },
         },
       });
