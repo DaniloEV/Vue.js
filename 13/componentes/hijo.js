@@ -37,4 +37,8 @@ Vue.component("hijo", {
     ...Vuex.mapMutations(["aumentar", "disminuir"]),
     ...Vuex.mapActions(["obtenerCursos"]),
   },
+  mounted() {
+    //Llama a store y dispara la acción obtenerCursos
+    this.$store.dispatch("obtenerCursos");
+  },
 });

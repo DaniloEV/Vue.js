@@ -34,7 +34,4 @@ Vue.component("titulo", {
     ...Vuex.mapState(["count", "count2"]),
   },
   //Lo que hace es modificar así que se utiliza los metodos
-  mounted() {
-    this.actions.obtenerCursos();
-  },
 });
