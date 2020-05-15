@@ -56,6 +56,48 @@ const routes = [
     //   // which is lazy-loaded when the route is visited.
     component: Foto20,
   },
+  {
+    //:id es para ruta dinamica, cuando venga el parametro lo colocará ahí
+    path: "/bootInstalacion",
+    name: "bootInstalacion",
+    //   // route level code-splitting
+    //   // this generates a separate chunk (about.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(
+        /* webpackChunkName: "Service" */ "../views/21/bootInstalacion.vue"
+      ),
+  },
+  {
+    //:id es para ruta dinamica, cuando venga el parametro lo colocará ahí
+    path: "/navbar",
+    name: "Navbar",
+    //   // route level code-splitting
+    //   // this generates a separate chunk (about.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "Service" */ "../views/22/navBar.vue"),
+  },
+  {
+    //:id es para ruta dinamica, cuando venga el parametro lo colocará ahí
+    path: "/columna",
+    name: "Columna",
+    //   // route level code-splitting
+    //   // this generates a separate chunk (about.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "Service" */ "../views/23/columna.vue"),
+  },
+  {
+    //:id es para ruta dinamica, cuando venga el parametro lo colocará ahí
+    path: "/formulario",
+    name: "Formulario",
+    //   // route level code-splitting
+    //   // this generates a separate chunk (about.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "Service" */ "../views/25/formulario.vue"),
+  },
 ];
 
 const router = new VueRouter({
